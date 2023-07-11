@@ -1,0 +1,92 @@
+body {
+  font-family: "Oxanium", cursive;
+  background: #000000;
+}
+
+body::before /*aqui criamos um elemento imaginario, ele nao aparece no arquivo do index, porem no site ele aparece como um elemento.*/ {
+    content:"";
+    background-image: url(../imagens/imagens/bg-desktop.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover; /* cobrir toda a tela*/
+    background-position: center;
+    width:100%;
+    height:100%;
+    position: absolute; /* aqui posisiona como antes de tudo, na frente de tudo */
+    z-index: -1; /*eixo de profundidade, -1 quer dizer que fica atras de tudo.*/
+    opacity: 0.2;
+
+}
+
+.cabecalho {
+  display: flex; /* o valor "flex" por padrao é configurado em "rool" ou seja linha, entao ficara os elementos um ao lado do outro horizontalmente*/
+  justify-content: center; /*faz com que o elemento filho seja no caso "centralizado", ou seja alinha horizontalmente quando o flex direction é "rool" ( linha) */
+}
+
+.selecao-de-personagens {
+  display: flex;
+  align-icons: center; /* alinha os itens verticalmente quando o flex direction é "rool" (linha)*/
+  gap: 30px;
+  min-height: calc(100vh - 152px);/*cria uma função de calculo , no caso vh = viewportman hight (altura da janela de exibição em %) */
+  justify-content: center;
+
+}
+
+.selecao-de-personagens .lista-de-personagens {
+  display: flex;
+  flex-wrap: wrap; /*essa tag comando que se nao tiver mais espaço na div ele quebra o conteudo */
+  gap: 30px;
+  justify-content: center;
+}
+
+.selecao-de-personagens .personagens {
+  display: flex;
+  flex-direction: column; /*aqui muda a direção do alinhamento para coluna ou seja vertical */
+  align-items: center;
+  max-width: 585px; /*a largura maxima será de 585 pixel*/
+  gap: 25px;
+}
+
+.selecao-de-personagens .titulo {
+  font-size: 20px; /* tamanho da fonte */
+  letter-spacing: 4px; /*espaçamento de letra */
+  text-transform: uppercase; /*aqui transforma o texto para ficar com "uppercase" (letras grandes / caixa alta) */
+  border-bottom: 2px solid #47f4ff; /*aqui estamos criando uma borda embaixo, com tamanho 2pixel, solida, e colocamos a cor*/
+  color: white;
+  width: 100%; /*o tamanho do conteudo vai ser 100% da largura do elemento pai*/
+  text-align: center;
+}
+
+.lista-depersonagens .personagem img {
+  width: 100%;
+  height: 100%;
+}
+
+.lista-de-personagens .personagem.selecionado {
+  box-shadow: 0px 0px 24px 5px #0271f7;
+}
+
+.personagem-selecionado {
+    text-align: center;
+    color: white;
+    max-height: 530px; /* aqui limita o tamanho maximo de altura em 530 pixels */
+
+}
+
+.personagem-selecionado .persongem-grande{
+    width: 430px;
+    height: 430px;
+
+}
+
+.personagem-selecionado .nome-personagem{
+    border-bottom: 2px solid #47f4ff; /* comando para borda inferior */
+    text-transform: uppercase /*propriedade que muda as letras para caixa alta */
+}
+
+.personagem-selecionado .descricao-personagem{
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    margin-top: 20px;
+    width: 420px;
+}
